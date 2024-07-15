@@ -17,21 +17,20 @@
             border: 2px solid red;
             border-radius: 10px;
             text-align: center;
-            margin: 50px auto;
-            max-width: 90%;
-            width: 600px;
-            box-sizing: border-box;
+            margin: 100px auto;
+            width: 80%;
+            max-width: 600px;
         }
         h1 {
-            font-size: 36px;
+            font-size: 48px;
             margin-bottom: 20px;
         }
         p {
-            font-size: 18px;
+            font-size: 24px;
             margin-bottom: 20px;
         }
         .alts {
-            font-size: 16px;
+            font-size: 20px;
         }
         .alts p {
             margin: 5px 0;
@@ -40,12 +39,12 @@
             margin-top: 20px;
         }
         .rating button {
-            font-size: 18px;
+            font-size: 24px;
             background-color: black;
             color: red;
             border: 2px solid red;
             border-radius: 5px;
-            padding: 8px 16px;
+            padding: 10px 20px;
             margin: 0 10px;
             cursor: pointer;
         }
@@ -55,18 +54,14 @@
         }
         .message {
             margin-top: 20px;
-            font-size: 16px;
+            font-size: 20px;
         }
         .icon {
             position: absolute;
             top: 10px;
-            right: 10px;
-            font-size: 30px;
+            left: 10px;
+            font-size: 40px;
             cursor: pointer;
-        }
-        .game {
-            font-size: 18px;
-            line-height: 1.2;
         }
     </style>
     <script>
@@ -78,61 +73,41 @@
                 message.textContent = "Thank you for your feedback! 👎";
             }
         }
-        function openGamePage() {
-            var newWindow = window.open("", "_blank");
-            if (newWindow) {
-                newWindow.document.write(`
-                    <!DOCTYPE html>
-                    <html lang="en">
-                    <head>
-                        <meta charset="UTF-8">
-                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                        <title>Alien Invaders Game</title>
-                        <style>
-                            body {
-                                background-color: black;
-                                color: red;
-                                font-family: Arial, sans-serif;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                height: 100vh;
-                                margin: 0;
-                            }
-                            .game {
-                                font-size: 18px;
-                                line-height: 1.2;
-                            }
-                        </style>
-                    </head>
-                    <body>
-                        <div class="game">
-                            👽🚀🌌<br>
-                            🚀🌌👽<br>
-                            🌌👾🚀<br>
-                            👽🌌🚀<br>
-                        </div>
-                        <script>
-                            document.addEventListener('touchstart', handleTouchStart);
-                            
-                            function handleTouchStart(event) {
-                                var touchX = event.touches[0].clientX;
-                                var touchY = event.touches[0].clientY;
-                                console.log("Touch coordinates: " + touchX + ", " + touchY);
-                                // Implement game logic here, e.g., move characters or shoot
-                            }
-                        </script>
-                    </body>
-                    </html>
-                `);
-            } else {
-                alert("Popup window blocked. Please allow popups for this site.");
-            }
+        function openBlankPage() {
+            var newWindow = window.open();
+            newWindow.document.write(`
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Blank Page</title>
+                    <style>
+                        body {
+                            background-color: black;
+                            color: red;
+                            font-family: Arial, sans-serif;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 100vh;
+                            margin: 0;
+                        }
+                        p {
+                            font-size: 24px;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <p>Something something</p>
+                </body>
+                </html>
+            `);
         }
     </script>
 </head>
 <body>
-    <div class="icon" onclick="openGamePage()">👾</div>
+    <div class="icon" onclick="openBlankPage()">📄</div>
     <div class="container">
         <h1>Hello World</h1>
         <p>Something something..</p>
