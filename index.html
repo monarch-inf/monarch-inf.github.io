@@ -63,6 +63,23 @@
             font-size: 40px;
             cursor: pointer;
         }
+        .play-game {
+            margin-top: 20px;
+        }
+        .play-game button {
+            font-size: 24px;
+            background-color: black;
+            color: red;
+            border: 2px solid red;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .play-game button:hover {
+            background-color: red;
+            color: black;
+        }
     </style>
     <script>
         function rate(isThumbsUp) {
@@ -73,7 +90,7 @@
                 message.textContent = "Thank you for your feedback! 👎";
             }
         }
-        function openBlankPage() {
+        function openGamePage() {
             var newWindow = window.open();
             newWindow.document.write(`
                 <!DOCTYPE html>
@@ -81,7 +98,7 @@
                 <head>
                     <meta charset="UTF-8">
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>Blank Page</title>
+                    <title>Rock Paper Scissors Game</title>
                     <style>
                         body {
                             background-color: black;
@@ -93,34 +110,31 @@
                             height: 100vh;
                             margin: 0;
                         }
-                        .content {
+                        .game {
                             text-align: center;
-                            padding: 20px;
                         }
-                        h1 {
+                        .game button {
                             font-size: 36px;
-                            margin-bottom: 20px;
-                        }
-                        p {
-                            font-size: 24px;
-                            margin-bottom: 20px;
-                        }
-                        a {
+                            background-color: black;
                             color: red;
-                            text-decoration: none;
-                            border-bottom: 1px solid red;
+                            border: 2px solid red;
+                            border-radius: 5px;
+                            padding: 20px 40px;
+                            margin: 20px;
+                            cursor: pointer;
                         }
-                        a:hover {
-                            color: black;
+                        .game button:hover {
                             background-color: red;
+                            color: black;
                         }
                     </style>
                 </head>
                 <body>
-                    <div class="content">
-                        <h1>Back home</h1>
-                        <p>Something something..</p>
-                        <a href="https://monarch-inf.github.io" target="_blank">Go back to website home</a>
+                    <div class="game">
+                        <h1>Rock Paper Scissors</h1>
+                        <button>🪨 Rock</button>
+                        <button>📄 Paper</button>
+                        <button>✂️ Scissors</button>
                     </div>
                 </body>
                 </html>
@@ -153,6 +167,9 @@
             <button onclick="rate(false)">👎 Thumbs Down</button>
         </div>
         <div id="message" class="message"></div>
+        <div class="play-game">
+            <button onclick="openGamePage()">Rock Paper Scissors</button>
+        </div>
     </div>
 </body>
 </html>
