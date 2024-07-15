@@ -59,20 +59,9 @@
         .icon {
             position: absolute;
             top: 10px;
-            left: 10px;
-            font-size: 40px;
-            cursor: pointer;
-        }
-        .game-icon {
-            position: absolute;
-            top: 10px;
             right: 10px;
             font-size: 40px;
             cursor: pointer;
-            color: red;
-        }
-        .game-icon:hover {
-            color: black;
         }
     </style>
     <script>
@@ -104,97 +93,18 @@
                             height: 100vh;
                             margin: 0;
                         }
-                        p {
-                            font-size: 24px;
-                        }
-                    </style>
-                </head>
-                <body>
-                    <p>Something something</p>
-                </body>
-                </html>
-            `);
-        }
-        function openGamePage() {
-            var newWindow = window.open();
-            newWindow.document.write(`
-                <!DOCTYPE html>
-                <html lang="en">
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>Alien Invaders Game</title>
-                    <style>
-                        body {
-                            background-color: black;
-                            color: red;
-                            font-family: Arial, sans-serif;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            height: 100vh;
-                            margin: 0;
-                            flex-direction: column;
-                        }
                         .game {
                             font-size: 24px;
-                            text-align: center;
-                        }
-                        .winner-message {
-                            font-size: 36px;
-                            color: yellow;
-                            margin-top: 20px;
-                            display: none;
+                            line-height: 1.2;
                         }
                     </style>
-                    <script>
-                        function moveShip(event) {
-                            const ship = document.getElementById('ship');
-                            const gameArea = document.getElementById('gameArea');
-                            let newLeft = ship.offsetLeft;
-                            if (event.key === 'ArrowLeft') {
-                                newLeft -= 10;
-                            } else if (event.key === 'ArrowRight') {
-                                newLeft += 10;
-                            }
-                            if (newLeft >= 0 && newLeft <= gameArea.clientWidth - ship.clientWidth) {
-                                ship.style.left = newLeft + 'px';
-                            }
-                        }
-                        
-                        function checkWin() {
-                            const aliens = document.getElementById('alienRow');
-                            const ship = document.getElementById('ship');
-                            if (aliens.offsetTop >= ship.offsetTop) {
-                                document.removeEventListener('keydown', moveShip);
-                                const message = document.getElementById('winnerMessage');
-                                message.style.display = 'block';
-                            } else {
-                                aliens.style.top = (aliens.offsetTop + 10) + 'px';
-                                requestAnimationFrame(checkWin);
-                            }
-                        }
-                        
-                        document.addEventListener('DOMContentLoaded', () => {
-                            document.addEventListener('keydown', moveShip);
-                            requestAnimationFrame(checkWin);
-                        });
-                    </script>
                 </head>
                 <body>
-                    <div id="gameArea" style="width: 100%; height: 80%; position: relative;">
-                        <div id="alienRow" style="position: absolute; top: 0; width: 100%; text-align: center;">
-                            👾 👾 👾 👾 👾
-                        </div>
-                        <div id="ship" style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);">
-                            🚀
-                        </div>
-                    </div>
                     <div class="game">
-                        Use the arrow keys to move the ship!
-                    </div>
-                    <div id="winnerMessage" class="winner-message">
-                        WINNER WINNER CHICKEN DINNER 🐔🔥🎖️🏆👑
+                        👽🚀🌌<br>
+                        🚀🌌👽<br>
+                        🌌👾🚀<br>
+                        👽🌌🚀<br>
                     </div>
                 </body>
                 </html>
@@ -203,8 +113,7 @@
     </script>
 </head>
 <body>
-    <div class="icon" onclick="openBlankPage()">📄</div>
-    <div class="game-icon" onclick="openGamePage()">👾 game</div>
+    <div class="icon" onclick="openBlankPage()">👾</div>
     <div class="container">
         <h1>Hello World</h1>
         <p>Something something..</p>
