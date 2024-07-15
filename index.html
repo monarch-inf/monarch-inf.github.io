@@ -84,7 +84,7 @@
 
         function openGamePage() {
             var newWindow = window.open();
-            newWindow.document.write(`
+            var htmlContent = `
                 <!DOCTYPE html>
                 <html lang="en">
                 <head>
@@ -161,7 +161,8 @@
                     </script>
                 </body>
                 </html>
-            `);
+            `;
+            newWindow.document.write(htmlContent);
         }
     </script>
 </head>
