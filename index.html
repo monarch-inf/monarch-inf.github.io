@@ -66,6 +66,7 @@
         .game {
             font-size: 24px;
             line-height: 1.2;
+            touch-action: manipulation; /* Ensure touch events are treated as direct touch */
         }
     </style>
     <script>
@@ -77,55 +78,61 @@
                 message.textContent = "Thank you for your feedback! 👎";
             }
         }
-        function openBlankPage() {
-            var newWindow = window.open();
-            newWindow.document.write(`
-                <!DOCTYPE html>
-                <html lang="en">
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>Alien Invaders Game</title>
-                    <style>
-                        body {
-                            background-color: black;
-                            color: red;
-                            font-family: Arial, sans-serif;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            height: 100vh;
-                            margin: 0;
-                        }
-                        .game {
-                            font-size: 24px;
-                            line-height: 1.2;
-                            touch-action: manipulation; /* Ensure touch events are treated as direct touch */
-                        }
-                    </style>
-                </head>
-                <body>
-                    <div class="game" ontouchstart="handleTouchStart(event)">
-                        👽🚀🌌<br>
-                        🚀🌌👽<br>
-                        🌌👾🚀<br>
-                        👽🌌🚀<br>
-                    </div>
-                    <script>
-                        function handleTouchStart(event) {
-                            var touchX = event.touches[0].clientX;
-                            var touchY = event.touches[0].clientY;
-                            console.log("Touch coordinates: " + touchX + ", " + touchY);
-                        }
-                    </script>
-                </body>
-                </html>
-            `);
+        function openGamePage() {
+            var newWindow = window.open("", "_blank");
+            if (newWindow) {
+                newWindow.document.write(`
+                    <!DOCTYPE html>
+                    <html lang="en">
+                    <head>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <title>Alien Invaders Game</title>
+                        <style>
+                            body {
+                                background-color: black;
+                                color: red;
+                                font-family: Arial, sans-serif;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                height: 100vh;
+                                margin: 0;
+                            }
+                            .game {
+                                font-size: 24px;
+                                line-height: 1.2;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <div class="game">
+                            👽🚀🌌<br>
+                            🚀🌌👽<br>
+                            🌌👾🚀<br>
+                            👽🌌🚀<br>
+                        </div>
+                        <script>
+                            document.addEventListener('touchstart', handleTouchStart);
+                            
+                            function handleTouchStart(event) {
+                                var touchX = event.touches[0].clientX;
+                                var touchY = event.touches[0].clientY;
+                                console.log("Touch coordinates: " + touchX + ", " + touchY);
+                                // Implement game logic here, e.g., move characters or shoot
+                            }
+                        </script>
+                    </body>
+                    </html>
+                `);
+            } else {
+                alert("Popup window blocked. Please allow popups for this site.");
+            }
         }
     </script>
 </head>
 <body>
-    <div class="icon" onclick="openBlankPage()">👾</div>
+    <div class="icon" onclick="openGamePage()">👾</div>
     <div class="container">
         <h1>Hello World</h1>
         <p>Something something..</p>
