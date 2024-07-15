@@ -63,6 +63,10 @@
             font-size: 40px;
             cursor: pointer;
         }
+        .game {
+            font-size: 24px;
+            line-height: 1.2;
+        }
     </style>
     <script>
         function rate(isThumbsUp) {
@@ -81,7 +85,7 @@
                 <head>
                     <meta charset="UTF-8">
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>Blank Page</title>
+                    <title>Alien Invaders Game</title>
                     <style>
                         body {
                             background-color: black;
@@ -96,16 +100,24 @@
                         .game {
                             font-size: 24px;
                             line-height: 1.2;
+                            touch-action: manipulation; /* Ensure touch events are treated as direct touch */
                         }
                     </style>
                 </head>
                 <body>
-                    <div class="game">
+                    <div class="game" ontouchstart="handleTouchStart(event)">
                         👽🚀🌌<br>
                         🚀🌌👽<br>
                         🌌👾🚀<br>
                         👽🌌🚀<br>
                     </div>
+                    <script>
+                        function handleTouchStart(event) {
+                            var touchX = event.touches[0].clientX;
+                            var touchY = event.touches[0].clientY;
+                            console.log("Touch coordinates: " + touchX + ", " + touchY);
+                        }
+                    </script>
                 </body>
                 </html>
             `);
