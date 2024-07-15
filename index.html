@@ -36,7 +36,38 @@
         .alts p {
             margin: 5px 0;
         }
+        .rating {
+            margin-top: 20px;
+        }
+        .rating button {
+            font-size: 24px;
+            background-color: black;
+            color: red;
+            border: 2px solid red;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        .rating button:hover {
+            background-color: red;
+            color: black;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 20px;
+        }
     </style>
+    <script>
+        function rate(isThumbsUp) {
+            var message = document.getElementById('message');
+            if (isThumbsUp) {
+                message.textContent = "Thank you for your feedback! 👍";
+            } else {
+                message.textContent = "Thank you for your feedback! 👎";
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -57,6 +88,11 @@
             <p>sheikh.omair</p>
             <p>omair.raza1</p>
         </div>
+        <div class="rating">
+            <button onclick="rate(true)">👍 Thumbs Up</button>
+            <button onclick="rate(false)">👎 Thumbs Down</button>
+        </div>
+        <div id="message" class="message"></div>
     </div>
 </body>
 </html>
