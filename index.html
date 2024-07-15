@@ -81,6 +81,37 @@
             color: black;
         }
     </style>
+</head>
+<body>
+    <div class="icon" onclick="openBlankPage()">📄</div>
+    <div class="container">
+        <h1>Hello World</h1>
+        <p>Something something..</p>
+        <p>I'm Omair Raza Akram.</p>
+        <p>𝐀𝐥𝐭𝐬 𝐥𝐢𝐬𝐭𝐞𝐝 𝐛𝐞𝐥𝐨𝐰</p>
+        <div class="alts">
+            <p>Monarch.y</p>
+            <p>monarch.y</p>
+            <p>monarchDOTy</p>
+            <p>PixelINF</p>
+            <p>Pixel_INF</p>
+            <p>PixelINFdev</p>
+            <p>Pixel_INFdev</p>
+            <p>omair_raza</p>
+            <p>sheikh.omairraza</p>
+            <p>sheikh.omair</p>
+            <p>omair.raza1</p>
+        </div>
+        <div class="rating">
+            <button onclick="rate(true)">👍 Thumbs Up</button>
+            <button onclick="rate(false)">👎 Thumbs Down</button>
+        </div>
+        <div id="message" class="message"></div>
+        <div class="play-game">
+            <button onclick="openGamePage()">Rock Paper Scissors</button>
+        </div>
+    </div>
+
     <script>
         function rate(isThumbsUp) {
             var message = document.getElementById('message');
@@ -90,8 +121,13 @@
                 message.textContent = "Thank you for your feedback! 👎";
             }
         }
+        
+        function openBlankPage() {
+            window.open("https://monarch-inf.github.io");
+        }
+        
         function openGamePage() {
-            var newWindow = window.open();
+            var newWindow = window.open("", "_blank");
             newWindow.document.write(`
                 <!DOCTYPE html>
                 <html lang="en">
@@ -172,35 +208,5 @@
             `);
         }
     </script>
-</head>
-<body>
-    <div class="icon" onclick="openBlankPage()">📄</div>
-    <div class="container">
-        <h1>Hello World</h1>
-        <p>Something something..</p>
-        <p>I'm Omair Raza Akram.</p>
-        <p>𝐀𝐥𝐭𝐬 𝐥𝐢𝐬𝐭𝐞𝐝 𝐛𝐞𝐥𝐨𝐰</p>
-        <div class="alts">
-            <p>Monarch.y</p>
-            <p>monarch.y</p>
-            <p>monarchDOTy</p>
-            <p>PixelINF</p>
-            <p>Pixel_INF</p>
-            <p>PixelINFdev</p>
-            <p>Pixel_INFdev</p>
-            <p>omair_raza</p>
-            <p>sheikh.omairraza</p>
-            <p>sheikh.omair</p>
-            <p>omair.raza1</p>
-        </div>
-        <div class="rating">
-            <button onclick="rate(true)">👍 Thumbs Up</button>
-            <button onclick="rate(false)">👎 Thumbs Down</button>
-        </div>
-        <div id="message" class="message"></div>
-        <div class="play-game">
-            <button onclick="openGamePage()">Rock Paper Scissors</button>
-        </div>
-    </div>
 </body>
 </html>
