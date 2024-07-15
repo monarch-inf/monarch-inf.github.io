@@ -11,15 +11,13 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
         .container {
-            padding: 20px;
-            border: 2px solid red;
-            border-radius: 10px;
             text-align: center;
-            margin: 100px auto;
-            width: 80%;
-            max-width: 600px;
         }
         h1 {
             font-size: 48px;
@@ -56,13 +54,6 @@
             margin-top: 20px;
             font-size: 20px;
         }
-        .icon {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            font-size: 40px;
-            cursor: pointer;
-        }
         .play-game {
             margin-top: 20px;
         }
@@ -81,37 +72,6 @@
             color: black;
         }
     </style>
-</head>
-<body>
-    <div class="icon" onclick="openBlankPage()">📄</div>
-    <div class="container">
-        <h1>Hello World</h1>
-        <p>Something something..</p>
-        <p>I'm Omair Raza Akram.</p>
-        <p>𝐀𝐥𝐭𝐬 𝐥𝐢𝐬𝐭𝐞𝐝 𝐛𝐞𝐥𝐨𝐰</p>
-        <div class="alts">
-            <p>Monarch.y</p>
-            <p>monarch.y</p>
-            <p>monarchDOTy</p>
-            <p>PixelINF</p>
-            <p>Pixel_INF</p>
-            <p>PixelINFdev</p>
-            <p>Pixel_INFdev</p>
-            <p>omair_raza</p>
-            <p>sheikh.omairraza</p>
-            <p>sheikh.omair</p>
-            <p>omair.raza1</p>
-        </div>
-        <div class="rating">
-            <button onclick="rate(true)">👍 Thumbs Up</button>
-            <button onclick="rate(false)">👎 Thumbs Down</button>
-        </div>
-        <div id="message" class="message"></div>
-        <div class="play-game">
-            <button onclick="openGamePage()">Rock Paper Scissors</button>
-        </div>
-    </div>
-
     <script>
         function rate(isThumbsUp) {
             var message = document.getElementById('message');
@@ -121,13 +81,9 @@
                 message.textContent = "Thank you for your feedback! 👎";
             }
         }
-        
-        function openBlankPage() {
-            window.open("https://monarch-inf.github.io");
-        }
-        
+
         function openGamePage() {
-            var newWindow = window.open("", "_blank");
+            var newWindow = window.open();
             newWindow.document.write(`
                 <!DOCTYPE html>
                 <html lang="en">
@@ -208,5 +164,35 @@
             `);
         }
     </script>
+</head>
+<body>
+    <div class="icon" onclick="openBlankPage()">📄</div>
+    <div class="container">
+        <h1>Hello World</h1>
+        <p>Something something..</p>
+        <p>I'm Omair Raza Akram.</p>
+        <p>𝐀𝐥𝐭𝐬 𝐥𝐢𝐬𝐭𝐞𝐝 𝐛𝐞𝐥𝐨𝐰</p>
+        <div class="alts">
+            <p>Monarch.y</p>
+            <p>monarch.y</p>
+            <p>monarchDOTy</p>
+            <p>PixelINF</p>
+            <p>Pixel_INF</p>
+            <p>PixelINFdev</p>
+            <p>Pixel_INFdev</p>
+            <p>omair_raza</p>
+            <p>sheikh.omairraza</p>
+            <p>sheikh.omair</p>
+            <p>omair.raza1</p>
+        </div>
+        <div class="rating">
+            <button onclick="rate(true)">👍 Thumbs Up</button>
+            <button onclick="rate(false)">👎 Thumbs Down</button>
+        </div>
+        <div id="message" class="message"></div>
+        <div class="play-game">
+            <button onclick="openGamePage()">Rock Paper Scissors</button>
+        </div>
+    </div>
 </body>
 </html>
