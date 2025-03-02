@@ -32,6 +32,33 @@ main {
     text-align: center;
 }
 
+.intro {
+    margin-bottom: 40px;
+}
+
+.blog-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.blog-entry {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.blog-entry h3 {
+    font-size: 24px;
+}
+
+.blog-entry a {
+    color: #ff5722;
+    text-decoration: none;
+    font-weight: bold;
+}
+
 .ad-container {
     margin: 20px auto;
     max-width: 700px;
@@ -43,7 +70,7 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
 }
