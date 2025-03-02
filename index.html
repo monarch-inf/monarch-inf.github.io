@@ -1,150 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1485883162130368"
-     crossorigin="anonymous"></script></head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
-    <style>
-        body {
-            background-color: black;
-            color: red;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            padding: 20px;
-            border: 2px solid red;
-            border-radius: 10px;
-            text-align: center;
-            margin: 100px auto;
-            width: 80%;
-            max-width: 600px;
-        }
-        h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-        p {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        .alts {
-            font-size: 20px;
-        }
-        .alts p {
-            margin: 5px 0;
-        }
-        .rating {
-            margin-top: 20px;
-        }
-        .rating button {
-            font-size: 24px;
-            background-color: black;
-            color: red;
-            border: 2px solid red;
-            border-radius: 5px;
-            padding: 10px 20px;
-            margin: 0 10px;
-            cursor: pointer;
-        }
-        .rating button:hover {
-            background-color: red;
-            color: black;
-        }
-        .message {
-            margin-top: 20px;
-            font-size: 20px;
-        }
-        .icon {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            font-size: 40px;
-            cursor: pointer;
-        }
-    </style>
-    <script>
-        function rate(isThumbsUp) {
-            var message = document.getElementById('message');
-            if (isThumbsUp) {
-                message.textContent = "👍!";
-            } else {
-                message.textContent = "AHHHHHHHHHH 😡👎";
-            }
-        }
-        function openBlankPage() {
-            var newWindow = window.open();
-            newWindow.document.write(`
-                <!DOCTYPE html>
-                <html lang="en">
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>Blank Page</title>
-                    <style>
-                        body {
-                            background-color: black;
-                            color: red;
-                            font-family: Arial, sans-serif;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            height: 100vh;
-                            margin: 0;
-                        }
-                        .content {
-                            text-align: center;
-                            padding: 20px;
-                        }
-                        h1 {
-                            font-size: 36px;
-                            margin-bottom: 20px;
-                        }
-                        p {
-                            font-size: 24px;
-                            margin-bottom: 20px;
-                        }
-                        a {
-                            color: red;
-                            text-decoration: none;
-                            border-bottom: 1px solid red;
-                        }
-                        a:hover {
-                            color: black;
-                            background-color: red;
-                        }
-                    </style>
-                </head>
-                <body>
-                    <div class="content">
-                        <h1>The 📄</h1>
-                        <p>Something something..</p>
-                        <a href="https://monarch-inf.github.io" target="_blank">Go back to website home</a>
-                    </div>
-                </body>
-                </html>
-            `);
-        }
-    </script>
+    <title>My Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1485883162130368"
+        crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="icon" onclick="openBlankPage()">📄</div>
-    <div class="container">
-        <h1>Hello World</h1>
-        <p>Something something..</p>
-        <p>I am</p>
-        <h1>Omair Raza</h1>
-        <div class="aynsyma">
-<h1> ع </h1>
+
+    <header>
+        <h1>Welcome to My Website</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>About Our Website</h2>
+        <p>This is a simple website with Google AdSense integration.</p>
+
+        <!-- Google AdSense Ad Placement -->
+        <div class="ad-container">
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-1485883162130368"
+                data-ad-slot="1234567890"
+                data-ad-format="auto"
+                data-full-width-responsive="true">
+            </ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
         </div>
-        <div class="rating">
-            <button onclick="rate(true)">👍 Thumbs Up</button>
-            <button onclick="rate(false)">👎 Thumbs Down</button>
-        </div>
-        <div id="message" class="message"></div>
-    </div>
+
+        <p>Enjoy our content and check out our services.</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 My Website | All Rights Reserved</p>
+    </footer>
+
 </body>
 </html>
